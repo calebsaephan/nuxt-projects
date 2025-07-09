@@ -6,9 +6,6 @@
 .cache
 dist
 
-# assets
-/public/videos/*
-
 # Node dependencies
 node_modules
 

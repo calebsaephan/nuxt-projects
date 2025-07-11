@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const isOpen = ref(false)
 
 onBeforeMount(() => {
-    document.body.classList.remove('no-scroll')  // Enable page scroll
+    document.body.classList.remove('no-scroll')
 })
 
 function toggleOpen() {
@@ -33,7 +33,6 @@ const routes = [
             class="relative z-100 bg-offwhite-100 dark:bg-black border-b border-gray-50 dark:border-gray-900 px-6 py-5">
 
             <div class="max-w-7xl mx-auto flex justify-between items-center">
-                <!-- Logo -->
                 <a href="/astella" class="text-2xl font-bold text-primary">
                     astella
                 </a>
@@ -44,11 +43,9 @@ const routes = [
                         class="text-gray-700 dark:text-gray-300 hover:text-primary">
                         {{ route.name }}
                     </NuxtLink>
-                    <!-- Dark mode toggle button -->
                     <DarkToggle />
                 </div>
 
-                <!-- Dark mode toggle button -->
                 <div class="flex gap-5 items-center md:hidden">
                     <DarkToggle class="md:hidden" />
 
@@ -74,7 +71,7 @@ const routes = [
         </nav>
         <!-- Mobile Dropdown -->
         <div :class="[
-            'md:hidden absolute z-100 w-full px-4 font-public-sans font-[500] tracking-tight overflow-hidden transition-all duration-200 ease-in bg-offwhite-100 dark:bg-gray-900',
+            'md:hidden absolute z-100 w-full px-4 font-public-sans font-[500] tracking-tight overflow-hidden transition-all duration-200 ease-in bg-offwhite-100 dark:bg-gray-950',
             isOpen ? 'h-screen max-h-screen pt-2' : 'h-0 max-h-0 pt-0'
         ]">
             <NuxtLink v-for="(route, index) in routes" :key="index" :to="route.to"
@@ -84,9 +81,9 @@ const routes = [
         </div>
 
         <div class="flow-root">
-            <section class="bg-gradient-to-b from-black to-slate-800 py-16 mb-10 md:py-0 md:h-screen flex items-center">
+            <section class="bg-gradient-to-b from-black to-slate-800 py-18 mb-10 md:py-0 md:h-screen flex items-center">
                 <div
-                    class="text-slate-50 max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center justify-between px-12 w-full">
+                    class="text-slate-50 max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center justify-between px-8 lg:px-12 w-full">
                     <div class="w-full md:w-2xl flex flex-col gap-16">
                         <h1 class="leading-none font-black">Transform patient care and streamline operations with
                             precision.</h1>
@@ -98,9 +95,9 @@ const routes = [
                         </div>
                         <div class="text-gray-400">
                             <a href="#" class="hover:text-gray-50 border-b border-dotted">
-                                <Icon name="mdi:book-open-page-variant" class="w-5 h-5 mr-2" /> Learn about how
+                                <Icon name="mdi:book-open-page-variant" class="w-5 h-5 mr-2" /> Learn how
                                 <strong class="text-primary">astella</strong>
-                                can unlock healthcare's full potential
+                                can unlock the full potential of healthcare services
                             </a>
                         </div>
                     </div>
@@ -113,7 +110,7 @@ const routes = [
                     </div>
                 </div>
             </section>
-            <section class="z-10 relative bg-offwhite-100 dark:bg-nextlight rounded-t-4xl -mt-16 py-16">
+            <section class="z-10 relative bg-offwhite-100 dark:bg-nextlight rounded-t-4xl -mt-18 py-18">
                 <div class="flex flex-col gap-8 max-w-7xl mx-auto justify-center items-center px-8 lg:px-0">
                     <h1 class="lg:w-4xl text-center dark:text-gray-50" style="font-size: calc(16px + 2vw);">One platform
                         for all
@@ -136,10 +133,5 @@ const routes = [
 /* Prevent page scroll when dropdown is open */
 body.no-scroll {
     overflow: hidden;
-}
-</style>
-<style scoped>
-body {
-    background-color: var(--color-slate-950);
 }
 </style>

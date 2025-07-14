@@ -1,7 +1,10 @@
 <script setup>
 import { ref } from 'vue'
+import { useDark } from '@vueuse/core'
+import Footer from '~/components/astella/footer/Footer.vue'
 
 const isOpen = ref(false)
+const isDark = useDark()
 
 onBeforeMount(() => {
     document.body.classList.remove('no-scroll')
@@ -81,9 +84,12 @@ const routes = [
         </div>
 
         <div class="flow-root">
-            <section class="bg-gradient-to-b from-black to-slate-800 py-18 mb-10 md:py-0 md:h-screen flex items-center">
+            <section
+                class="relative bg-gradient-to-b bg-offwhite-100 to-neutral-50 dark:from-black dark:to-slate-800 py-18 mb-10 md:py-0 md:h-screen flex items-center">
+                <div :class="['absolute inset-0 ', isDark ? '' : 'hero-bg']">
+                </div>
                 <div
-                    class="text-slate-50 max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center justify-between px-8 lg:px-12 w-full">
+                    class="z-10 dark:text-slate-50 max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center justify-between px-8 lg:px-12 w-full">
                     <div class="w-full md:w-2xl flex flex-col gap-16">
                         <h1 class="leading-none font-black">Transform patient care and streamline operations with
                             precision.</h1>
@@ -94,7 +100,7 @@ const routes = [
                             </p>
                         </div>
                         <div class="text-gray-400">
-                            <a href="#" class="hover:text-gray-50 border-b border-dotted">
+                            <a href="#" class="hover:text-gray-600 dark:hover:text-gray-50 border-b border-dotted">
                                 <Icon name="mdi:book-open-page-variant" class="w-5 h-5 mr-2" /> Learn how
                                 <strong class="text-primary">astella</strong>
                                 can unlock the full potential of healthcare services
@@ -102,15 +108,15 @@ const routes = [
                         </div>
                     </div>
                     <div
-                        class="w-full md:w-xl h-64 md:h-screen overflow-hidden md:overflow-visible rounded-lg shadow-lg flex items-center justify-center">
-                        <video class="object-cover" autoplay muted loop playsinline>
+                        class="w-full md:w-xl h-64 md:h-screen overflow-hidden md:overflow-visible rounded-lg flex items-center justify-center">
+                        <video class="object-cover  rounded-lg shadow-lg " autoplay muted loop playsinline>
                             <source src="/videos/1192.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
                 </div>
             </section>
-            <section class="z-10 relative bg-offwhite-100 dark:bg-nextlight rounded-t-4xl -mt-18 py-18">
+            <section class="z-10 relative bg-offwhite-100 dark:bg-nextlight rounded-t-4xl -mt-18 py-36">
                 <div class="flex flex-col gap-8 max-w-7xl mx-auto justify-center items-center px-8 lg:px-0">
                     <h1 class="lg:w-4xl text-center dark:text-gray-50" style="font-size: calc(16px + 2vw);">One platform
                         for all
@@ -127,11 +133,22 @@ const routes = [
             </section>
         </div>
     </div>
+    <Footer />
 </template>
 
 <style>
 /* Prevent page scroll when dropdown is open */
 body.no-scroll {
     overflow: hidden;
+}
+
+.hero-bg {
+    mask-image: radial-gradient(circle at 20% -90%, transparent 10%, black 170%);
+    -webkit-mask-image: radial-gradient(circle at 20% -90%, transparent 10%, black 170%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background-image: url('/images/ripples.png');
+    background-repeat: repeat, no-repeat;
+    background-blend-mode: multiply;
 }
 </style>

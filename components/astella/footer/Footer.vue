@@ -72,7 +72,7 @@ const resourceLinks = [
             <div
                 class="flex justify-between mt-8 pt-6 border-t border-gray-300 dark:border-gray-800 text-sm text-gray-500">
                 <div>
-                    <p>&copy; 2025 Caleb Saephan</p>
+                    <a href="https://calebsaephan.dev">&copy; 2025 Caleb Saephan</a>
                 </div>
                 <!-- Legal Links Section -->
                 <div class="flex gap-4 text-sm">

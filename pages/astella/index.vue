@@ -1,10 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import { useDark } from '@vueuse/core'
 import Footer from '~/components/astella/footer/Footer.vue'
+import FeatureCard from '~/components/astella/section/FeatureCard.vue'
 
 const isOpen = ref(false)
-const isDark = useDark()
 
 onBeforeMount(() => {
     document.body.classList.remove('no-scroll')
@@ -86,7 +85,7 @@ const routes = [
         <div class="flow-root">
             <section
                 class="relative bg-gradient-to-b bg-offwhite-100 to-neutral-50 dark:from-black dark:to-slate-800 py-18 mb-10 md:py-0 md:h-screen flex items-center">
-                <div :class="['absolute inset-0 ', isDark ? '' : 'hero-bg']">
+                <div class="absolute inset-0 hero-bg dark:hidden">
                 </div>
                 <div
                     class="z-10 dark:text-slate-50 max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center justify-between px-8 lg:px-12 w-full">
@@ -141,25 +140,55 @@ const routes = [
                 </div>
             </section>
 
-            <section class="relative bg-offwhite-100 dark:bg-slate-800 py-36 dark:text-gray-100">
-                <div class="flex flex-col lg:flex-row gap-12 max-w-7xl w-full justify-center mx-auto px-8 lg:px-0">
-
-                    <div class="max-w-lg text-center lg:text-left">
+            <section class="relative bg-gray-200 dark:bg-slate-800 py-36 dark:text-gray-100">
+                <FeatureCard>
+                    <div class="max-w-lg">
                         <h3 class="text-2xl font-semibold mb-3 border-l-[24px] pl-2 border-primary">Optimized tools for
                             providers</h3>
                         <p class="text-lg text-gray-600 dark:text-gray-400">
                             AI-powered controls to help navigate and assist with complex issues quickly.
                         </p>
                     </div>
-
-                    <div class="flex justify-center items-center w-full max-w-md max-h-64 overflow-hidden rounded-lg">
+                    <div
+                        class="flex justify-center items-center w-full mx-auto md:max-w-2xl md:max-h-72 max-w-md max-h-64 overflow-hidden rounded-lg">
                         <video class="w-full h-auto rounded-lg shadow-lg" autoplay muted loop playsinline>
                             <source src="/videos/9237.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
-
-                </div>
+                </FeatureCard>
+                <FeatureCard>
+                    <div class="max-w-lg order-1 lg:order-2 ">
+                        <h3 class="text-2xl font-semibold mb-3 border-l-[24px] pl-2 border-primary">Effortless tools for
+                            patient privacy & data</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-400">
+                            Secure data solutions so you can focus on patient care.
+                        </p>
+                    </div>
+                    <div
+                        class="order-2 lg:order-1 flex justify-center items-center w-full mx-auto md:max-w-2xl md:max-h-72 max-w-md max-h-64 overflow-hidden rounded-lg">
+                        <video class="w-full h-auto rounded-lg shadow-lg" autoplay muted loop playsinline>
+                            <source src="/videos/9237.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </FeatureCard>
+                <FeatureCard>
+                    <div class="max-w-lg">
+                        <h3 class="text-2xl font-semibold mb-3 border-l-[24px] pl-2 border-primary">Full picture
+                            operations</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-400">
+                            With the power of AI, users can get a full overview and speed up operations by 5x.
+                        </p>
+                    </div>
+                    <div
+                        class="flex justify-center items-center w-full mx-auto md:max-w-2xl md:max-h-72 max-w-md max-h-64 overflow-hidden rounded-lg">
+                        <video class="w-full h-auto rounded-lg shadow-lg" autoplay muted loop playsinline>
+                            <source src="/videos/9237.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </FeatureCard>
             </section>
 
         </div>

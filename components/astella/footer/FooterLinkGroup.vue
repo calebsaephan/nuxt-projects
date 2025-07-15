@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h6 class="font-semibold text-sm mb-1 uppercase">{{ title }}</h6>
-        <ul class="text-gray-700 dark:text-gray-400">
+        <h6 class="font-semibold text-sm mb-2 uppercase text-gray-400 dark:text-gray-500">{{ title }}</h6>
+        <ul class="text-gray-700 dark:text-gray-300">
             <li v-for="(link, index) in links" :key="index" class="my-0.5">
-                <a :href="link.href" class="hover:text-gray-400 dark:hover:text-gray-200">
+                <a :href="link.href" class="hover:text-gray-400 dark:hover:text-gray-500">
                     {{ link.name }}
                 </a>
             </li>

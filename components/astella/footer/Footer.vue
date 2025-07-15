@@ -5,16 +5,9 @@ const companyLinks = [
     { name: 'About Us', href: 'javascript:void(0)' },
     { name: 'Partners', href: 'javascript:void(0)' },
     { name: 'Leadership', href: 'javascript:void(0)' },
-
     { name: 'Awards', href: 'javascript:void(0)' },
     { name: 'Press', href: 'javascript:void(0)' },
-]
-
-
-const careerLinks = [
-    { name: 'Jobs', href: 'javascript:void(0)' },
-    { name: 'Employee Benefits', href: 'javascript:void(0)' },
-    { name: 'Life at Astella', href: 'javascript:void(0)' },
+    { name: 'Careers', href: 'javascript:void(0)' },
 ]
 
 const solutionLinks = [
@@ -51,16 +44,11 @@ const resourceLinks = [
 <template>
     <footer class="bg-neutral-100 dark:bg-gray-950 dark:text-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="flex flex-col gap-6">
-                    <FooterLinkGroup title="Company" :links="companyLinks" />
-                    <FooterLinkGroup title="Careers" :links="careerLinks" />
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <FooterLinkGroup title="Company" :links="companyLinks" />
                 <FooterLinkGroup title="Solutions" :links="solutionLinks" />
-                <div class="flex flex-col gap-6">
-                    <FooterLinkGroup title="Products" :links="productLinks" />
-                    <FooterLinkGroup title="Resources" :links="resourceLinks" />
-                </div>
+                <FooterLinkGroup title="Products" :links="productLinks" />
+                <FooterLinkGroup title="Resources" :links="resourceLinks" />
                 <div class="flex flex-col gap-6">
                     <FooterLinkGroup title="Support" :links="supportLinks" />
                     <FooterLinkGroup title="Astella" :links="astellaLinks" />
@@ -82,7 +70,7 @@ const resourceLinks = [
 
 
             <div
-                class="flex justify-between mt-8 pt-6 border-t border-gray-300 dark:border-gray-800 text-sm text-gray-600">
+                class="flex justify-between mt-8 pt-6 border-t border-gray-300 dark:border-gray-800 text-sm text-gray-500">
                 <div>
                     <p>&copy; 2025 Caleb Saephan</p>
                 </div>
@@ -94,6 +82,9 @@ const resourceLinks = [
                     <a href="javascript:void(0)"
                         class="text-gray-600 dark:text-gray-400 hover:text-gray-400 dark:hover:text-gray-200">Privacy
                         Policy</a>
+                    <a href="javascript:void(0)"
+                        class="text-gray-600 dark:text-gray-400 hover:text-gray-400 dark:hover:text-gray-200">Do Not
+                        Sell</a>
                     <a href="javascript:void(0)"
                         class="text-gray-600 dark:text-gray-400 hover:text-gray-400 dark:hover:text-gray-200">Cookies</a>
                 </div>

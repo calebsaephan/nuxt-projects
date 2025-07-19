@@ -11,6 +11,13 @@
                         <Icon name="mdi:arrow-right" class="w-5 h-5 text-amber-800 opacity-0 group-hover:opacity-100" />
                     </NuxtLink>
                 </li>
+                <li class="group relative">
+                    <NuxtLink to="/basilstory"
+                        class="inline-flex items-center px-4 py-2 font-bold text-amber-800 hover:bg-amber-200">
+                        basilstory
+                        <Icon name="mdi:arrow-right" class="w-5 h-5 text-amber-800 opacity-0 group-hover:opacity-100" />
+                    </NuxtLink>
+                </li>
             </ul>
         </div>
     </div>

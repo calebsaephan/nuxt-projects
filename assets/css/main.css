@@ -16,6 +16,18 @@
     --color-offwhite-200: oklch(0.9 0 0);
     --color-primary: oklch(79.592% 0.10095 45.813);
     --color-nextlight: oklch(0.54 0.02 352.21);
+
+    --color-basil-50: oklch(90% 0.5 130deg);
+    --color-basil-100: oklch(85% 0.48 130deg);
+    --color-basil-200: oklch(80% 0.46 130deg);
+    --color-basil-300: oklch(75% 0.44 130deg);
+    --color-basil-400: oklch(70% 0.42 130deg);
+    --color-basil-500: oklch(65% 0.4 130deg);
+    --color-basil-600: oklch(60% 0.38 130deg);
+    --color-basil-700: oklch(55% 0.36 130deg);
+    --color-basil-800: oklch(50% 0.34 130deg);
+    --color-basil-900: oklch(45% 0.32 130deg);
+    --color-basil-950: oklch(40% 0.3 130deg);
 }
 
 @layer base {
